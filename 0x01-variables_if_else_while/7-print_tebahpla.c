@@ -1,17 +1,16 @@
 #include <stdio.h>
 /**
-  * main - print 0-9
+  * main - print alphabet in reverse
   * Return: 0
   */
 int main(void)
 {
-	int c;
+	char c;
 
-	for (c = 48; c <= 57; c++)
+	for (c = 'z'; c >= 'a'; c--)
 	{
 		putchar(c);
 	}
 	putchar('\n');
 	return (0);
 }
-
