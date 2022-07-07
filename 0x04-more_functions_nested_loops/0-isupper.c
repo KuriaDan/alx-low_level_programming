@@ -4,7 +4,7 @@
   * @c: int parameter of the function
   * Return: 0 or 1
   */
-int _isuper(int c)
+int _isupper(int c)
 {
 	if (c >= 65 && c <= 90)
 	{
