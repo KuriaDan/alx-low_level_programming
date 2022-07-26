@@ -8,32 +8,28 @@
   */
 char *str_concat(char *s1, char *s2)
 {
-	int a, b, c;
 	char *arr;
+	int i, j = 0, len = 0;
 
-	c = 0;
-	arr = malloc(sizeof(*s1 + *s2));
-
-	if (arr == NULL)
-		return (NULL);
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
-	a = 0;
-	while (s1[a] != '\0')
+	for (i = 0; s1[i] || s2[i]; i++)
+		len++;
+	arr = malloc(sizeof(char) * len);
+
+	if (arr == NULL)
+		return (NULL);
+	for (i = 0; s1[i]; i++)
 	{
-		arr[c] = s1[a];
-		a++;
-		c++;
+		arr[j] = s1[i];
+		j++;
 	}
-	b = 0;
-	while (s2[b] != '\0')
+	for (i = 0; s2[i]; i++)
 	{
-		arr[c] = s2[b];
-		b++;
-		c++;
+		arr[j] = s2[i];
+		j++;
 	}
 	return (arr);
-	free(arr);
 }
