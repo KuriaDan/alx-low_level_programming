@@ -16,9 +16,7 @@ char *str_concat(char *s1, char *s2)
 
 	if (arr == NULL)
 		return (NULL);
-	
 	a = 0;
-
 	while (s1[a] != '\0')
 	{
 		arr[c] = s1[a];
