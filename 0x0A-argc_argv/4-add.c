@@ -17,7 +17,7 @@ int main(int argc, char **argv)
 	{
 		a = atoi(*argv++);
 		if (a == 0)
-			return ('Error);
+			return ("Error");
 		s = s + a;
 	}
 	
