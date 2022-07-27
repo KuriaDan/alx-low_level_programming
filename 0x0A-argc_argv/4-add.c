@@ -16,8 +16,11 @@ int main(int argc, char **argv)
 	while (argc--)
 	{
 		a = atoi(*argv++);
+		if (a == 0)
+			return ('Error);
 		s = s + a;
 	}
+	
 	printf("%d\n", s);
 	exit(EXIT_SUCCESS);
 }
