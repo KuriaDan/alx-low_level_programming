@@ -24,7 +24,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		i++;
 	/* allocating memory */
 	ptr = malloc((i + (n * sizeof(*s2) + 1) * sizeof(*ptr)));
-	
 	/* segf */
 	if (ptr == NULL)
 		return (NULL);
