@@ -7,17 +7,19 @@
   * @n: bytes of string 2
   * Return: pointer to concatenated string
   */
-char *string_nconcate(char *s1, char *s2, unsigned int n)
+char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *ptr;
-	unsigned int i = 0, k = 0;
+	char *ptr, *empt;
+	unsigned int i, k;
 
 	/* if null is passed, treat it as an empty string */
+	empt = "";
 	if (s1 == NULL)
-		s1 = "";
+		s1 = empt;
 	if (s2 == NULL)
-		s2 = "";
+		s2 = empt;
 	/* FInding size of string 1 */
+	i = 0;
 	while (s1[i] != '\0')
 		i++;
 	/* allocating memory */
@@ -32,7 +34,7 @@ char *string_nconcate(char *s1, char *s2, unsigned int n)
 		ptr[i] = s1[i];
 		i++;
 	}
-	for (k = 0; s2[k] != '\0'; && k < n; k++, i++)
+	for (k = 0; s2[k] != '\0' && k < n; k++, i++)
 		ptr[i] = s2[k];
 	ptr[i] = '\0';
 	return (ptr);
