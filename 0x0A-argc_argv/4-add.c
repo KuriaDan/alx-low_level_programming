@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <ctype.h>
 /**
  * main - Very cool function to add numbers
  * @argc: Number of arguments passed
@@ -8,19 +8,25 @@
  *
  * Return: Success
  */
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
-	int a, s;
+	int i = 1, j, sum = 0;
 
-	s = 0;
-	while (argc--)
+	for (i = 1; i < argc; i++)
 	{
-		a = atoi(*argv++);
-		if (a == 0)
-			return ("Error");
-		s = s + a;
+		for (j = 0; argv[i][j]; j++)
+		{
+			if (isdigit(argv[i][j]) == 0)
+			{
+				printf("Error\n");
+				return (1);
+			}
+		}
 	}
-	
-	printf("%d\n", s);
-	exit(EXIT_SUCCESS);
+	for (i = 1; i < argc; i++)
+	{
+		sum += atoi(argv[i]);
+	}
+	printf("%d\n", sum);
+	return (0);
 }
